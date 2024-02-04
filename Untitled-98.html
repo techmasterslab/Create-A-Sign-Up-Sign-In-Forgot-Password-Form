@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Life Forms</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<style>
+  /* Custom styles to ensure exact match */
+  .form-input {
+    border: 1px solid #ccc;
+    padding: .5rem .75rem;
+  }
+  .form-button {
+    background-color: #0a66c2;
+    color: white;
+  }
+  .social-button {
+    background-color: #fff;
+    color: #0a66c2;
+    border: 1px solid #ccc;
+  }
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body class="bg-gray-200 flex flex-col items-center justify-center h-screen">
+    <!-- Sign Up Form -->
+    <div id="signup-form" class="bg-white p-8 rounded shadow-md w-full max-w-sm mx-2">
+      <h2 class="text-2xl font-semibold mb-6">Sign Up</h2>
+      <input type="text" placeholder="Email or phone number" class="w-full px-3 py-2 border rounded mb-2">
+      <input type="password" placeholder="Password (6+ characters)" class="w-full px-3 py-2 border rounded mb-4">
+      <button class="w-full bg-blue-500 text-white px-3 py-2 rounded mb-2">Agree & Join</button>
+      <button class="w-full flex items-center justify-center bg-white text-blue-500 px-3 py-2 rounded border border-gray-300 mb-2">
+        <i class="fab fa-google mr-2"></i>
+        <span>Continue with Google</span>
+    </button>
+    
+      <p class="text-center text-sm text-blue-500">Already have an account? <a href="#" class="underline" onclick="showForm('signin-form')">Sign in</a></p>
+    </div>
+  
+    <!-- Sign In Form -->
+    <div id="signin-form" class="bg-white p-8 rounded shadow-md w-full max-w-sm mx-2 hidden">
+      <h2 class="text-2xl font-semibold mb-6">Sign in</h2>
+      <input type="text" placeholder="Email or Phone" class="w-full px-3 py-2 border rounded mb-2">
+      <input type="password" placeholder="Password" class="w-full px-3 py-2 border rounded mb-2">
+      <a href="#" class="text-sm text-blue-500 mb-4" onclick="showForm('forgot-password-form')">Forgot password?</a>
+      <button class="w-full bg-blue-500 text-white px-3 py-2 rounded mb-2">Sign in</button>
+      <button class="w-full flex items-center justify-center bg-white text-blue-500 px-3 py-2 rounded border border-gray-300 mb-2">
+        <i class="fab fa-google mr-2"></i>
+        <span>Continue with Google</span>
+    </button>
+    
+    
+      <p class="text-center text-sm text-blue-500">Don't have an account? <a href="#" class="underline" onclick="showForm('signup-form')">Join now</a></p>
+    </div>
+  
+    <!-- Forgot Password Form -->
+    <div id="forgot-password-form" class="bg-white p-8 rounded shadow-md w-full max-w-sm mx-2 hidden">
+      <h2 class="text-2xl font-semibold mb-6">Forgot password</h2>
+      <input type="text" placeholder="Email or Phone" class="w-full px-3 py-2 border rounded mb-4">
+      <button class="w-full bg-blue-500 text-white px-3 py-2 rounded mb-4">Next</button>
+      <p class="text-center text-sm text-blue-500"><a href="#" class="underline" onclick="showForm('signin-form')">Back</a></p>
+    </div>
+  
+  <script>
+    function showForm(formId) {
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('signin-form').style.display = 'none';
+      document.getElementById('forgot-password-form').style.display = 'none';
+      document.getElementById(formId).style.display = 'block';
+    }
+  </script>
+  </body>
+  </html>
